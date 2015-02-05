@@ -14,18 +14,20 @@ The following versions of PHP are supported by this version.
 
 ## Description
 
-* Return Zend\Config for PHP Array Configurations with optional merging of environment Configuration
+* Returns Zend\Config for PHP Array Configurations from Files
+* Optional merging of environment specific Configuration
 * The Key represents the Configuration File
 * e.g. foo = foo.php under directory
-* e.g. foo = foo.staging.php for staging environment (will optionally be merged onto main configuration)
+* e.g. foo = foo.staging.php for staging environment
+* staging configurations will optionally be merged onto main configuration
 
 ``` php
-ConfigManager::setDirectory('configs');
-ConfigManager::get('app');
+\Flex\ConfigManager::setDirectory('configs');
+\Flex\ConfigManager::get('app');
 ```
 
 ``` php
-ConfigManager::setDirectory('configs');
-ConfigManager::setEnvironment('staging');
-ConfigManager::get('app');
+\Flex\ConfigManager::setDirectory('configs');
+\Flex\ConfigManager::setEnvironment('staging');
+\Flex\ConfigManager::get('app');
 ```
