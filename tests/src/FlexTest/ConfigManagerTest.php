@@ -110,13 +110,21 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @test
-     * @expectedException Exception
-     * @expectedExceptionMessage missing environment configuration for key app and environment foo
      */
-    public function test_getConfig_environment_missing() {
+    public function test_getConfig_environment_missing_fallbackMain() {
         ConfigManager::setEnvironment('foo');
         ConfigManager::setDirectory($this->directory);
-        ConfigManager::get('app');
+
+        $result = ConfigManager::get('app');
+        $this->assertInstanceOf('\\Zend\\Config\\Config', $result);
+
+        $this->assertEquals('bar', $result->get('name'));
+        $this->assertEquals('foo', $result->get('username'));
+        $this->assertEquals('123', $result->get('password'));
+
+        $this->assertInstanceOf('\\Zend\\Config\\Config', $result->get('server'));
+        $this->assertEquals('foo.de', $result->get('server')->get('host'));
+        $this->assertEquals(3306, $result->get('server')->get('port'));
     }
 
     /**

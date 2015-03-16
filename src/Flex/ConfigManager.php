@@ -80,11 +80,7 @@ class ConfigManager extends ArrayObject {
         $config = new Config(include $baseConfigFile);
 
         // optional environment configuration
-        if(!empty(self::$environment) && !file_exists($environmentConfigFile)) {
-            throw new Exception("missing environment configuration for key {$key} and environment " . self::$environment);
-        }
-
-        if(!empty(self::$environment)) {
+        if(!empty(self::$environment) && file_exists($environmentConfigFile)) {
             /** @noinspection PhpIncludeInspection */
             $config->merge(new Config(include $environmentConfigFile));
         }
