@@ -1,7 +1,6 @@
 # flex-config
 
-[![Software License](https://img.shields.io/packagist/l/elnebuloso/bundler.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/elnebuloso/bundler/master.svg?style=flat-square)](https://travis-ci.org/elnebuloso/bundler)
+[![Build Status](https://travis-ci.org/elnebuloso/flex-config.svg?branch=master)](https://travis-ci.org/elnebuloso/flex-config)
 
 ## Requirements
 
@@ -16,7 +15,6 @@ The following versions of PHP are NOT supported by this version.
 
 * PHP 7.0
 * HHVM
-
 
 ## Installation / Usage
 
