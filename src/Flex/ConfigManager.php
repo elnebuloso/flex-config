@@ -10,7 +10,8 @@ use Zend\Config\Config;
  *
  * @author Jeff Tunessen <jeff.tunessen@gmail.com>
  */
-class ConfigManager extends ArrayObject {
+class ConfigManager extends ArrayObject
+{
 
     /**
      * @var string
@@ -30,7 +31,8 @@ class ConfigManager extends ArrayObject {
     /**
      * @param string $environment
      */
-    public static function setEnvironment($environment) {
+    public static function setEnvironment($environment)
+    {
         self::$environment = $environment;
     }
 
@@ -38,10 +40,11 @@ class ConfigManager extends ArrayObject {
      * @param string $directory
      * @throws Exception
      */
-    public static function setDirectory($directory) {
+    public static function setDirectory($directory)
+    {
         self::$directory = realpath($directory);
 
-        if(self::$directory === false) {
+        if (self::$directory === false) {
             throw new Exception("invalid directory {$directory}");
         }
     }
@@ -49,8 +52,9 @@ class ConfigManager extends ArrayObject {
     /**
      * @return ConfigManager
      */
-    public static function getInstance() {
-        if(self::$manager === null) {
+    public static function getInstance()
+    {
+        if (self::$manager === null) {
             self::$manager = new self();
         }
 
@@ -62,17 +66,18 @@ class ConfigManager extends ArrayObject {
      * @return Config
      * @throws Exception
      */
-    public static function get($key) {
+    public static function get($key)
+    {
         $instance = self::getInstance();
 
-        if($instance->offsetExists($key)) {
+        if ($instance->offsetExists($key)) {
             return $instance->offsetGet($key);
         }
 
         $baseConfigFile = self::$directory . '/' . $key . '.php';
         $environmentConfigFile = self::$directory . '/' . $key . '.' . self::$environment . '.php';
 
-        if(!file_exists($baseConfigFile)) {
+        if (!file_exists($baseConfigFile)) {
             throw new Exception("missing configuration for key {$key}");
         }
 
@@ -80,7 +85,7 @@ class ConfigManager extends ArrayObject {
         $config = new Config(include $baseConfigFile);
 
         // optional environment configuration
-        if(!empty(self::$environment) && file_exists($environmentConfigFile)) {
+        if (!empty(self::$environment) && file_exists($environmentConfigFile)) {
             /** @noinspection PhpIncludeInspection */
             $config->merge(new Config(include $environmentConfigFile));
         }
@@ -94,8 +99,9 @@ class ConfigManager extends ArrayObject {
      * @param string $key
      * @return bool
      */
-    public static function isRegistered($key) {
-        if(self::$manager === null) {
+    public static function isRegistered($key)
+    {
+        if (self::$manager === null) {
             return false;
         }
 
@@ -105,7 +111,8 @@ class ConfigManager extends ArrayObject {
     /**
      * @return void
      */
-    public static function unsetInstance() {
+    public static function unsetInstance()
+    {
         self::$manager = null;
     }
 
@@ -115,7 +122,8 @@ class ConfigManager extends ArrayObject {
      * @param string $key
      * @return bool
      */
-    public function offsetExists($key) {
+    public function offsetExists($key)
+    {
         return array_key_exists($key, $this);
     }
 }

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.4
+
+- PSR1, PSR2 Coding Standard
+
 ## 2.0.3
 
 - bugfix, missing environment config, fallback to main config
