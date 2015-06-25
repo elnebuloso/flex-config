@@ -9,7 +9,8 @@ use Flex\ConfigManager;
  *
  * @author Jeff Tunessen <jeff.tunessen@gmail.com>
  */
-class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
+class ConfigManagerTest extends \PHPUnit_Framework_TestCase
+{
 
     /**
      * @var string
@@ -19,14 +20,16 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @return void
      */
-    public function setUp() {
+    public function setUp()
+    {
         $this->directory = realpath(dirname(__FILE__) . '/../../resources/configs');
     }
 
     /**
      * @return void
      */
-    public function tearDown() {
+    public function tearDown()
+    {
         ConfigManager::unsetInstance();
     }
 
@@ -35,7 +38,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
      * @expectedException Exception
      * @expectedExceptionMessage invalid directory foo/bar/baz
      */
-    public function test_getConfig_invalidDirectory() {
+    public function testGetConfigInvalidDirectory()
+    {
         ConfigManager::setEnvironment(null);
         ConfigManager::setDirectory('foo/bar/baz');
     }
@@ -45,7 +49,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
      * @expectedException Exception
      * @expectedExceptionMessage missing configuration for key app
      */
-    public function test_getConfig_missingConfig() {
+    public function testGetConfigMissingConfig()
+    {
         ConfigManager::setEnvironment(null);
         ConfigManager::setDirectory(null);
         ConfigManager::get('app');
@@ -54,7 +59,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function test_getConfig() {
+    public function testGetConfig()
+    {
         ConfigManager::setEnvironment(null);
         ConfigManager::setDirectory($this->directory);
 
@@ -73,7 +79,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function test_getConfig_environment_local() {
+    public function testGetConfigEnvironmentLocal()
+    {
         ConfigManager::setEnvironment('local');
         ConfigManager::setDirectory($this->directory);
 
@@ -92,7 +99,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function test_getConfig_environment_staging() {
+    public function testGetConfigEnvironmentStaging()
+    {
         ConfigManager::setEnvironment('staging');
         ConfigManager::setDirectory($this->directory);
 
@@ -111,7 +119,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function test_getConfig_environment_missing_fallbackMain() {
+    public function testGetConfigEnvironmentMissingFallbackMain()
+    {
         ConfigManager::setEnvironment('foo');
         ConfigManager::setDirectory($this->directory);
 
@@ -130,7 +139,8 @@ class ConfigManagerTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function test_getConfig_getOnceFromFile() {
+    public function testGetConfigGetOnceFromFile()
+    {
         ConfigManager::setEnvironment(null);
         ConfigManager::setDirectory($this->directory);
 
