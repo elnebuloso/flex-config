@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.0.0
+
+- no support for php 5.3
+
 ## 2.0.4, 2.0.5
 
 - PSR1, PSR2 Coding Standard

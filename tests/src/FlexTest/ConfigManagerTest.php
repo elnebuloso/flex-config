@@ -11,7 +11,6 @@ use Flex\ConfigManager;
  */
 class ConfigManagerTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var string
      */

@@ -1,10 +1,10 @@
 <?php
-return array(
-    'name' => 'bar',
+return [
+    'name'     => 'bar',
     'username' => 'foo',
     'password' => '123',
-    'server' => array(
+    'server'   => [
         'host' => 'foo.de',
-        'port' => 3306
-    )
-);
+        'port' => 3306,
+    ],
+];

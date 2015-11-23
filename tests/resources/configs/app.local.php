@@ -1,7 +1,7 @@
 <?php
-return array(
+return [
     'password' => '456',
-    'server' => array(
-        'host' => 'dev.foo.de'
-    )
-);
+    'server'   => [
+        'host' => 'dev.foo.de',
+    ],
+];

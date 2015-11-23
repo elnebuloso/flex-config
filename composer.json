@@ -1,5 +1,5 @@
 {
-    "name": "elnebuloso\/flex-config",
+    "name": "elnebuloso/flex-config",
     "type": "library",
     "license": "MIT",
     "description": "configuration for your environment",
@@ -16,12 +16,12 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "zendframework\/zend-config": "~2.3"
+        "php": ">=5.4.0",
+        "zendframework/zend-config": "~2.3"
     },
     "autoload": {
         "psr-0": {
-            "Flex\\": "src\/"
+            "Flex\\": "src/"
         }
     }
 }

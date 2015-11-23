@@ -12,7 +12,6 @@ use Zend\Config\Config;
  */
 class ConfigManager extends ArrayObject
 {
-
     /**
      * @var string
      */
