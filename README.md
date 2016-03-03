@@ -1,6 +1,7 @@
 # flex-config
 
 [![Build Status](https://travis-ci.org/elnebuloso/flex-config.svg?branch=master)](https://travis-ci.org/elnebuloso/flex-config)
+[![Coverage Status](https://coveralls.io/repos/github/elnebuloso/flex-config/badge.svg?branch=master)](https://coveralls.io/github/elnebuloso/flex-config?branch=master)
 
 ## Requirements
 
