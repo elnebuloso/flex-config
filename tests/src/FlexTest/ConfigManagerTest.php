@@ -1,15 +1,16 @@
 <?php
-namespace FlexTest;
+namespace elnebuloso\FlexTest;
 
 use Exception;
-use Flex\ConfigManager;
+use elnebuloso\Flex\ConfigManager;
+use PHPUnit_Framework_TestCase;
 
 /**
  * Class ConfigManagerTest
  *
  * @author Jeff Tunessen <jeff.tunessen@gmail.com>
  */
-class ConfigManagerTest extends \PHPUnit_Framework_TestCase
+class ConfigManagerTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @var string

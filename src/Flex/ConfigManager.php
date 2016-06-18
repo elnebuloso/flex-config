@@ -1,5 +1,5 @@
 <?php
-namespace Flex;
+namespace elnebuloso\Flex;
 
 use ArrayObject;
 use Exception;
