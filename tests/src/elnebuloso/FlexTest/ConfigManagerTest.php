@@ -22,7 +22,7 @@ class ConfigManagerTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->directory = realpath(dirname(__FILE__) . '/../../resources/configs');
+        $this->directory = realpath(dirname(__FILE__) . '/../../../resources/configs');
     }
 
     /**

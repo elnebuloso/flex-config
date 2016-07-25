@@ -1,8 +1,8 @@
 {
     "name": "elnebuloso/flex-config",
-    "type": "library",
-    "license": "MIT",
     "description": "configuration for your environment",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "php",
         "configuration",
@@ -16,21 +16,21 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "zendframework/zend-config": "~2.3"
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-config": "^2.6"
     },
-    "require-dev": {
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
-            "elnebuloso\\Flex\\": "src/Flex/"
+            "elnebuloso\\Flex\\": "src/elnebuloso/Flex/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "elnebuloso\\FlexTest\\": "tests/src/FlexTest/"
+            "elnebuloso\\FlexTest\\": "tests/src/elnebuloso/FlexTest/"
         }
     },
-    "suggest": {
-    }
+    "suggest": {},
+    "conflict": {},
+    "extra": {}
 }
